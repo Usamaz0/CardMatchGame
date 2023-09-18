@@ -16,7 +16,7 @@ public class PuzzleBoard : MonoBehaviour
     [SerializeField] private int gridColumnCount = 2;
 
     public event Action onCardBoardGenerated;
-    public UnityEvent onCarBoardGeneratedEvent;
+    public UnityEvent onPuzzleBoardGeneratedEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +32,9 @@ public class PuzzleBoard : MonoBehaviour
 
     private void BoardReady()
     {
-        if (onCarBoardGeneratedEvent != null)
+        if (onPuzzleBoardGeneratedEvent != null)
         {
-            onCarBoardGeneratedEvent.Invoke();
+            onPuzzleBoardGeneratedEvent.Invoke();
         }
     }
 

@@ -97,4 +97,8 @@ public class CardMarkers : MonoBehaviour
             cards[randomIndex].transform.SetSiblingIndex(indexInHierarchy);
         }
     }
+    public int GetCardCount()
+    {
+        return cards.Length;
+    }
 }
