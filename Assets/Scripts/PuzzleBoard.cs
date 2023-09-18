@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,12 @@ public class PuzzleBoard : MonoBehaviour
     [SerializeField] private Transform puzzleBoard;
     [SerializeField] private GridLayoutGroup puzzleGridLayoutGroup;
     [SerializeField] private GameObject puzzleCardPrefab;
+
+    [Header("Grid Size")]
     [SerializeField] private int gridRowCount = 2;
     [SerializeField] private int gridColumnCount = 2;
+
+    public event Action onCardBoardGenerated;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +22,14 @@ public class PuzzleBoard : MonoBehaviour
         puzzleGridLayoutGroup.constraintCount = gridColumnCount; // set Grid Size
         AdjustCardSize();
         PopulatePuzzleBoard();
+        if (onCardBoardGenerated != null) 
+        {
+            onCardBoardGenerated();
+        }
     }
     void PopulatePuzzleBoard()
     {
-        for (int i = 0; i < gridColumnCount * gridRowCount; i++)
+        for (int i = 0; i < GetGridSize(); i++)
         {
             Instantiate(puzzleCardPrefab, puzzleBoard, false);
         }
@@ -38,5 +47,9 @@ public class PuzzleBoard : MonoBehaviour
             puzzleGridLayoutGroup.spacing = currentCardSpacing;
             puzzleGridLayoutGroup.cellSize = currentCardSize;
         }
+    }
+    public int GetGridSize()
+    {
+        return gridColumnCount * gridRowCount;
     }
 }
