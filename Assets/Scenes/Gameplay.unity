@@ -539,8 +539,8 @@ MonoBehaviour:
   puzzleBoard: {fileID: 258646587}
   puzzleGridLayoutGroup: {fileID: 258646590}
   puzzleCardPrefab: {fileID: 5220583752622544540, guid: 2e3eeda8a00f6a34bb1238acb0b248e4, type: 3}
-  gridRowCount: 4
-  gridColumnCount: 4
+  gridRowCount: 2
+  gridColumnCount: 2
   onCarBoardGeneratedEvent:
     m_PersistentCalls:
       m_Calls:

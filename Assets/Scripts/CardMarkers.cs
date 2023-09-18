@@ -36,6 +36,7 @@ public class CardMarkers : MonoBehaviour
             AddButtonListener(i, i);
             AddButtonListener(i + boardHalfSize, i);
         }
+        ShuffleMarkers();
     }
 
     private void AddButtonListener(int index, int cardIndex)
@@ -47,6 +48,7 @@ public class CardMarkers : MonoBehaviour
     {
         Debug.Log("Selected Card Index is:" + index);
         ShowMarker(index, cardIndex);
+        cards[index].interactable = false;
         if (onCardClick != null)
         {
             onCardClick(cardIndex);
@@ -59,10 +61,11 @@ public class CardMarkers : MonoBehaviour
     }
     IEnumerator HideMarker(List<int> cardsToHideList)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0;i < cardsToHideList.Count;i++)
         {
             cards[cardsToHideList[i]].image.sprite = cardBack;
+            cards[cardsToHideList[i]].interactable = true;
         }
     }
     void HideMarkersWithDelay()
@@ -70,6 +73,7 @@ public class CardMarkers : MonoBehaviour
         StartCoroutine(HideMarker(cardsToHide));
         cardsToHide = new List<int>();
     }
+
     void DisableMarkersWithDelay()
     {
         StartCoroutine(DisableMarker(cardsToHide));
@@ -77,10 +81,20 @@ public class CardMarkers : MonoBehaviour
     }
     IEnumerator DisableMarker(List<int> cardsToHideList)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < cardsToHideList.Count; i++)
         {
             cards[cardsToHideList[i]].gameObject.SetActive(false);
+        }
+    }
+    void ShuffleMarkers()
+    {
+        for (int i = 0; i < cards.Length; i++)
+        {
+            int indexInHierarchy = cards[i].transform.GetSiblingIndex();
+            int randomIndex = UnityEngine.Random.Range(i, cards.Length);
+            cards[indexInHierarchy].transform.SetSiblingIndex(randomIndex);
+            cards[randomIndex].transform.SetSiblingIndex(indexInHierarchy);
         }
     }
 }
