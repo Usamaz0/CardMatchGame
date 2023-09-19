@@ -11,12 +11,19 @@ public class PuzzleBoard : MonoBehaviour
     [SerializeField] private GridLayoutGroup puzzleGridLayoutGroup;
     [SerializeField] private GameObject puzzleCardPrefab;
 
-    [Header("Grid Size")]
-    [SerializeField] private int gridRowCount = 2;
-    [SerializeField] private int gridColumnCount = 2;
+    int gridRowCount = 2;
+    int gridColumnCount = 2;
 
     public event Action onCardBoardGenerated;
     public UnityEvent onPuzzleBoardGeneratedEvent;
+
+    [SerializeField] private LevelContainer levelContainer;
+
+    private void Awake()
+    {
+        gridRowCount = levelContainer.GetLevelGridRowCount();
+        gridColumnCount = levelContainer.GetLevelGridColumnCount();
+    }
     // Start is called before the first frame update
     void Start()
     {

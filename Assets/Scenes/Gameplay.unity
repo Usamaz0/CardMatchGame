@@ -385,7 +385,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 329253573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 431823088}
+        m_TargetAssemblyTypeName: LevelContainer, Assembly-CSharp
+        m_MethodName: IncreaseLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &329253573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +436,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329253570}
   m_CullTransparentMesh: 1
+--- !u!1 &431823087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 431823089}
+  - component: {fileID: 431823088}
+  m_Layer: 0
+  m_Name: LevelContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &431823088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431823087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0721dbf28be00c41a053f9c19cf9393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelInfo:
+  - {fileID: 11400000, guid: 71bf0fe3da3e89940a485a9afbf28037, type: 2}
+  - {fileID: 11400000, guid: 8865125704b810d49961bc84eee8acb1, type: 2}
+  - {fileID: 11400000, guid: f0a4b0b44088e9b43b90c15067b932f9, type: 2}
+  - {fileID: 11400000, guid: 743f7a823f2c241468cd684f0d6c8765, type: 2}
+  - {fileID: 11400000, guid: 47f720e2d2669494c832529afc8480db, type: 2}
+  - {fileID: 11400000, guid: fd7aafd3e6f17024e834a37789344779, type: 2}
+  - {fileID: 11400000, guid: 922485d1dcaad48488b9964cda057279, type: 2}
+  - {fileID: 11400000, guid: 23eb9ddfaf536c64c87dc0962990fca7, type: 2}
+  - {fileID: 11400000, guid: a5e56e9b4d9ca6549bef0e874b3a4763, type: 2}
+  - {fileID: 11400000, guid: a6efa250b1cbde34f9b854e17b5ddec9, type: 2}
+  - {fileID: 11400000, guid: bf44323a30199d443991719790af4dfc, type: 2}
+  - {fileID: 11400000, guid: 8d3234413418fbe4b8592f834abb328d, type: 2}
+  - {fileID: 11400000, guid: c57ec2ad958a5fc449ad309b43fd42d5, type: 2}
+  - {fileID: 11400000, guid: cec17ba0915b33c4eb2a6aedd404f12b, type: 2}
+  - {fileID: 11400000, guid: 65ad9210964fa8444bb16cb736e90568, type: 2}
+  - {fileID: 11400000, guid: 83c0d8a99b9621d4d8524c159fe794f6, type: 2}
+  - {fileID: 11400000, guid: 0bf288b54368d8941b34ffbc811ff249, type: 2}
+  - {fileID: 11400000, guid: 951e67b8f0091ee4ab0df1a4b5d99152, type: 2}
+  - {fileID: 11400000, guid: c5919a02b63652048a39a3fa02170e92, type: 2}
+  - {fileID: 11400000, guid: e0493effd8318d74a81aef70ac94144d, type: 2}
+  - {fileID: 11400000, guid: e0b10e1f393c2124cbd17f06e705a6d7, type: 2}
+  - {fileID: 11400000, guid: efd2d546c2b49fa4da30889294e65c5f, type: 2}
+  - {fileID: 11400000, guid: 6702875e8d4eb3c4d8e833db3cc0ad7e, type: 2}
+  - {fileID: 11400000, guid: 45e89da8f85f0ef49b6d45429cdd59f8, type: 2}
+  - {fileID: 11400000, guid: 4d370222316b54742ace8b672b9d4a21, type: 2}
+--- !u!4 &431823089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431823087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +1075,6 @@ GameObject:
   - component: {fileID: 1119497741}
   - component: {fileID: 1119497742}
   - component: {fileID: 1119497745}
-  - component: {fileID: 1119497746}
   - component: {fileID: 1119497744}
   - component: {fileID: 1119497743}
   m_Layer: 0
@@ -1018,8 +1099,6 @@ MonoBehaviour:
   puzzleBoard: {fileID: 258646587}
   puzzleGridLayoutGroup: {fileID: 258646590}
   puzzleCardPrefab: {fileID: 5220583752622544540, guid: 2e3eeda8a00f6a34bb1238acb0b248e4, type: 3}
-  gridRowCount: 2
-  gridColumnCount: 2
   onPuzzleBoardGeneratedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1035,6 +1114,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  levelContainer: {fileID: 431823088}
 --- !u!4 &1119497739
 Transform:
   m_ObjectHideFlags: 0
@@ -1234,19 +1314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9821718122d01a5428672214294d519d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1119497746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119497737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f561800b40b393448860190eaac870a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardMarkers: {fileID: 0}
 --- !u!1 &1253356230
 GameObject:
   m_ObjectHideFlags: 0
