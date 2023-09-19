@@ -29,7 +29,7 @@ public class CardMarkers : MonoBehaviour
 
     void AssignCarMarkers()
     {
-        cards  = puzzleBoard.GetComponentsInChildren<Button>();
+        cards = puzzleBoard.GetComponentsInChildren<Button>();
         int boardHalfSize = board.GetGridSize() / 2;
         for (int i = 0; i < boardHalfSize; i++)
         {
@@ -47,22 +47,29 @@ public class CardMarkers : MonoBehaviour
     void CardClick(int index,int cardIndex)
     {
         Debug.Log("Selected Card Index is:" + index);
-        ShowMarker(index, cardIndex);
+        StartCoroutine(ShowMarker(index, cardIndex));
         cards[index].interactable = false;
+        cardsToHide.Add(index);
         if (onCardClick != null)
         {
             onCardClick(cardIndex);
         }
     }
-    void ShowMarker(int index, int cardIndex)
+    IEnumerator ShowMarker(int index, int cardIndex)
     {
-        cardsToHide.Add(index);
+        cards[index].GetComponent<Animator>().SetTrigger("Flip");
+        yield return new WaitForSeconds(0.2f);
         cards[index].image.sprite = cardSprites[cardIndex];
     }
     IEnumerator HideMarker(List<int> cardsToHideList)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         for (int i = 0;i < cardsToHideList.Count;i++)
+        {
+            cards[cardsToHideList[i]].GetComponent<Animator>().SetTrigger("Flip");
+        }
+        yield return new WaitForSeconds(0.2f);
+        for (int i = 0; i < cardsToHideList.Count; i++)
         {
             cards[cardsToHideList[i]].image.sprite = cardBack;
             cards[cardsToHideList[i]].interactable = true;
