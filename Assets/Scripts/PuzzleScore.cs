@@ -18,7 +18,8 @@ public class PuzzleScore : MonoBehaviour
     }
     private void Start()
     {
-        cardMatchCheck.onTurnUpdated += IncreaseTurns;
+        cardMatchCheck.onCardMismatahed += IncreaseTurns;
+        cardMatchCheck.onCardMatahed += IncreaseTurns;
         cardMatchCheck.onCardMatahed += IncreaseMatches;
     }
 
