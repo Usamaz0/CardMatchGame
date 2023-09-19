@@ -46,7 +46,6 @@ public class CardMarkers : MonoBehaviour
 
     void CardClick(int index,int cardIndex)
     {
-        Debug.Log("Selected Card Index is:" + index);
         StartCoroutine(ShowMarker(index, cardIndex));
         cards[index].interactable = false;
         cardsToHide.Add(index);

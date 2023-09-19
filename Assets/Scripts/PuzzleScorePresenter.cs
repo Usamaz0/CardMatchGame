@@ -6,6 +6,7 @@ using UnityEngine;
 public class PuzzleScorePresenter : MonoBehaviour
 {
     [SerializeField] private PuzzleScore puzzleScore;
+    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI turnScoreText;
     [SerializeField] private TextMeshProUGUI matchScoreText;
 
@@ -14,6 +15,7 @@ public class PuzzleScorePresenter : MonoBehaviour
     {
         puzzleScore.onTurnUpdated += UpdateTurnScore;
         puzzleScore.onMatchesUpdated += UpdateMatchScore;
+        puzzleScore.onTurnUpdated += UpdateScore;
     }
 
     void UpdateTurnScore()
@@ -23,5 +25,14 @@ public class PuzzleScorePresenter : MonoBehaviour
     void UpdateMatchScore()
     {
         matchScoreText.text = "Matchs : " + puzzleScore.GetMatches();
+    }
+    void UpdateScore()
+    {
+        Invoke(nameof(UpdateScoreWithDelay),0.03f);
+    }
+
+    private void UpdateScoreWithDelay()
+    {
+        scoreText.text = "Score : " + puzzleScore.GetScore();
     }
 }

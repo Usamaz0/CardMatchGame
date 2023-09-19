@@ -51,7 +51,6 @@ public class CardMatchCheck : MonoBehaviour
         if (lastSelectedIndex == index)
         {
             // card Matched
-            Debug.Log("Cards Matched");
             if (onCardMatahed != null)
             {
                 onCardMatahed();

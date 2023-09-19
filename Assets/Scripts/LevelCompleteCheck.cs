@@ -28,7 +28,6 @@ public class LevelCompleteCheck : MonoBehaviour
     {
         if(cardsToMatch == 0)
         {
-            Debug.Log("Level Completed");
             Invoke(nameof(LevelComplete),0.5f);
         }
     }

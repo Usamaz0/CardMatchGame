@@ -8,6 +8,7 @@ public class PuzzleScore : MonoBehaviour
     CardMatchCheck cardMatchCheck;
     int turns;
     int matches;
+    int score;
     public event Action onTurnUpdated;
     public event Action onMatchesUpdated;
 
@@ -47,5 +48,9 @@ public class PuzzleScore : MonoBehaviour
     public int GetMatches()
     {
         return matches;
+    }
+    public int GetScore()
+    {
+        return (int)(matches * 100)/turns;
     }
 }
